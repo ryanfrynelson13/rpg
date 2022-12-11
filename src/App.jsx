@@ -1,9 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import React, {useEffect} from "react";
 
 
 
 
 function App() {  
+
+  const navigate = useNavigate()
+
+  useEffect(() => {navigate('/start')},[])
  
   return (
     <div className="App">
