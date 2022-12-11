@@ -1,4 +1,4 @@
-.game {
+.game-init {
     width: 70%;
     height: 70vh;
     margin: 2rem auto;
@@ -13,4 +13,15 @@
     background-color: black;
     height: 100%;
     border-radius: 8px;
+}
+
+.hero-img{
+    width: 32vw;
+    height: 70vh;
+}
+
+.hero-img img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
 }

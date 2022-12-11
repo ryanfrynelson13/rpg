@@ -1,4 +1,4 @@
-import Game from "./Game";
+import GameInit from "./Init/GameInit";
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
         <h1>Ryan's RPG</h1>
       </header>
       <main>
-        <Game />
+        <GameInit />
       </main>
     </div>
   );
