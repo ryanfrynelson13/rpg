@@ -1,15 +1,33 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import dwarf from '../img/heros/636271781394265550.png'
 import human from '../img/heros/636271801914013762.png'
 import elf from '../img/heros/636287075350739045.png'
 import goblin from '../img/heros/638062024584880857.png'
 import centaur from '../img/heros/dfae8441ec34f97d11fdf959000f1b7c.jpg'
 
-const ChooseCharacter = ({initHero}) => {
+import '../styles/game-init.css'
+
+import Human from '../models/Heros/Human'
+import Dwarf from '../models/Heros/Dwarf'
+import Elf from '../models/Heros/Elf'
+import Goblin from '../models/Heros/Goblin'
+import Centaur from '../models/Heros/Centaur'
+
+const classMap = new Map([
+  ['human', Human],
+  ['dwarf', Dwarf],
+  ['elf', Elf],
+  ['goblin', Goblin],
+  ['centaur', Centaur],
+])
+
+const ChooseCharacter = () => {
     const [chosenHeroType, setChosenHeroType ] = useState('human')
     const [chosenHeroTypeImg, setChosenHeroTypeImg ] = useState(human)
-    const [hasChosenHeroType, sethasChosenHeroType ] = useState(false)
-
+    const [hasChosenHeroType, sethasChosenHeroType ] = useState(false)    
+    const navigate = useNavigate()
+    
     const selectHeroType = (event) => {
       const valuesArr = event.target.value.split(',')
       console.log(valuesArr);
@@ -27,8 +45,9 @@ const ChooseCharacter = ({initHero}) => {
         name: event.target.name.value,
         class: chosenHeroType
       }
-      initHero(hero)
-      event.target.name.value = ''
+      const newHero = new (classMap.get(hero.class))(hero.name) 
+      navigate('/game-board', { state: newHero});
+      
     }
 
     const selectHeroTypeHTML = () => {
@@ -55,11 +74,13 @@ const ChooseCharacter = ({initHero}) => {
     }
 
   return (
-    <div className="d-flex mx-auto px-5">
-      <div className="hero-img">
-        <img className="img-fluid" src={chosenHeroTypeImg} alt="" />
+    <div className="game-init shadow-lg">
+      <div className="d-flex mx-auto px-5">
+        <div className="hero-img">
+          <img className="img-fluid" src={chosenHeroTypeImg} alt="" />
+        </div>
+        { hasChosenHeroType ? selectHeroName() : selectHeroTypeHTML()}
       </div>
-      { hasChosenHeroType ? selectHeroName() : selectHeroTypeHTML()}
     </div>
   );
 };

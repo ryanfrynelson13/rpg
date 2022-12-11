@@ -1,0 +1,8 @@
+.hero-name{
+    text-transform: capitalize;
+}
+
+.stats {
+    list-style: none;
+    text-transform: capitalize;
+}
