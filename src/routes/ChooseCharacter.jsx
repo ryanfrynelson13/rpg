@@ -29,10 +29,9 @@ const ChooseCharacter = () => {
     const navigate = useNavigate()
     
     const selectHeroType = (event) => {
-      const valuesArr = event.target.value.split(',')
-      console.log(valuesArr);
-        setChosenHeroType(valuesArr[0])
-        setChosenHeroTypeImg(valuesArr[1])
+      const valuesArr = event.target.value.split(',')      
+      setChosenHeroType(valuesArr[0])
+      setChosenHeroTypeImg(valuesArr[1])
     }
 
     const confirmHeroType = () => {
@@ -41,11 +40,8 @@ const ChooseCharacter = () => {
 
     const submitHeroName = (event) => {
       event.preventDefault()
-      const hero = {
-        name: event.target.name.value,
-        class: chosenHeroType
-      }
-      const newHero = new (classMap.get(hero.class))(hero.name) 
+      if(event.target.name.value.length === 0) return     
+      const newHero = new (classMap.get(chosenHeroType))(event.target.name.value) 
       navigate('/game-board', { state: newHero});
       
     }
