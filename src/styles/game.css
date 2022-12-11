@@ -1,0 +1,16 @@
+.game {
+    width: 70%;
+    height: 70vh;
+    margin: 2rem auto;
+    border-radius: 8px;
+    /* background-color: black; */
+}
+
+.start-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+    border-radius: 8px;
+}
