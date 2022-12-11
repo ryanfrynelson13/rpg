@@ -1,8 +1,8 @@
-import Personnage from "../Personnage.js";
-class Monstre extends Personnage {
+import Character from "../Character.js";
+class Monster extends Character {
 
-    constructor (nom) {
-        super(nom);
+    constructor (name) {
+        super(name);
     }
 
     toString () {
@@ -10,4 +10,4 @@ class Monstre extends Personnage {
     }
 }
 
-export default Monstre
+export default Monster
