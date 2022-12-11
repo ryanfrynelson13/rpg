@@ -14,7 +14,7 @@ function generateStats () {
 
     // Génération des 4 statistiques
     for (let i = 0; i < 4; i++) {
-        stats.push(dice6.lancer());
+        stats.push(dice6.roll());
     }
 
     // Tri du tableau par ordre croissant + suppression de la plus petite valeur

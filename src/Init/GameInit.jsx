@@ -3,7 +3,7 @@ import StartGameInit from "./StartGameInit";
 import "../styles/game-init.css";
 import ChooseCharacter from "./ChooseCharacter";
 
-const Game = () => {
+const GameInit = ({getHeroInit}) => {
     const [isInitStarted, setIsInitStarted] = useState(false)
 
     const startGame = () => {
@@ -12,9 +12,9 @@ const Game = () => {
 
   return (
     <div className="game-init shadow-lg">
-      { isInitStarted ? <ChooseCharacter /> : <StartGameInit startGame={startGame} />}
+      { isInitStarted ? <ChooseCharacter initHero={(hero) => getHeroInit(hero)} /> : <StartGameInit startGame={startGame} />}
     </div>
   );
 };
 
-export default Game;
+export default GameInit;

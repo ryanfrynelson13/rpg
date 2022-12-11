@@ -4,6 +4,8 @@ class Dwarf extends Hero {
 
     constructor (name) {
         super(name);
+        this.class = 'dwarf'
+
     }
 
 }

@@ -1,11 +1,13 @@
 import Hero from "../Heros/Hero.js";
 
-class Human extends Hero {
+class Goblin extends Hero {
 
     constructor (name) {
         super(name);
+        this.class = 'goblin'
+
     }
 
 }
 
-export default Human;
+export default Goblin;

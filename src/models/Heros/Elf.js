@@ -1,11 +1,13 @@
 import Hero from "../Heros/Hero.js";
 
-class Centaur extends Hero {
+class Elf extends Hero {
 
     constructor (name) {
         super(name);
+        this.class = 'elf'
+
     }
 
 }
 
-export default Centaur;
+export default Elf;

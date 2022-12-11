@@ -1,5 +1,5 @@
 import Character from "../Character.js";
-import Monster from "../Monsters/Monster.js.js";
+import Monster from "../Monsters/Monster.js";
 
 /** 
  * Personnage Héros
