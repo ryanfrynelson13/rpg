@@ -23,11 +23,11 @@ const GameBoard = () => {
   const hero = state
 
   const startDuel = () => {
-    navigate('/game-board/duel', {state: hero})
+    navigate('/game-board/board', {state: hero})
   }
    
   return (
-      <div className='d-flex'>
+      <div className='d-flex justify-content-around'>
         <div className='card m-4 border border-dark bg-dark text-white' style={{width: "18rem"}}>
           <img src={classMap.get(hero.class)} className='card-img-top border border-dark' alt="" />
           <h2 className='hero-name text-center '>{hero.name}</h2>
@@ -36,7 +36,7 @@ const GameBoard = () => {
               <li>Strength: {hero.strength}</li>
               <li>HP: {hero.hp}</li>
           </ul>   
-          <button className='btn btn-outline-light' onClick={startDuel}>Start Duel</button>    
+          <button className='btn btn-outline-light' onClick={startDuel}>Start Adventure</button>    
         </div>
         <Outlet />
       </div>

@@ -5,6 +5,9 @@ import Dice from "./Dice.js";
 /** Classe représentant un personnage */
 class Character {
 
+    #_strength
+    #_endurance
+
     /**
      * Créer un personnage
      * @param {string} nom Le nom du personnage
@@ -13,16 +16,24 @@ class Character {
         this.de4 = new Dice(4);
         this.de6 = new Dice(6);
         this.name = name;
-        this.strength = generateStats();
-        this.endurance = generateStats();
+        this.#_strength = generateStats();
+        this.#_endurance = generateStats();
         this.hp = this.endurance + modifier(this.endurance);
+    }
+
+    get strength () {
+        return this.#_strength
+    }
+
+    get endurance () {
+        return this.#_endurance
     }
 
     /**
      * Permet de frapper un personnage cible lui ôtant une certaine quantité de points de vie
      * @param {Personnage} cible Personnage cible de l'attaque
      */
-    frapper (target) {
+    hit (target) {
         if (target === this || !(target instanceof Character) || target.hp <= 0) return;
 
         console.log("Pv "+ target.name +" avant attaque : ", target.hp);

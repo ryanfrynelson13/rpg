@@ -1,0 +1,22 @@
+div:focus,
+div:active{
+    outline: none;
+}
+
+.board{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(20, 4rem);
+}
+
+.board-square{
+    height: 4rem;
+    width: 4rem;
+    overflow: hidden;
+}
+
+.curr img{
+   object-fit: fill;
+   width: 100%;
+
+}

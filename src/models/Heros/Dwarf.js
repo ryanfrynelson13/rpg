@@ -5,7 +5,10 @@ class Dwarf extends Hero {
     constructor (name) {
         super(name);
         this.class = 'dwarf'
+    }
 
+    get endurance () {
+        return super.endurance +1
     }
 
 }

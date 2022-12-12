@@ -1,8 +1,11 @@
 import { Outlet } from "react-router-dom";
 // import React, {useEffect} from "react";
 
+// let index = 0
 
-
+// export const test = () => {
+//    return {index}
+// }
 
 function App() {  
 
@@ -12,9 +15,10 @@ function App() {
   // useEffect(() => {navigate('/start')},[])
  
   return (
-    <div className="App">
+    <div className="App" tabIndex={0}
+  >
       <header className="text-center bg-secondary p-4 text-white">
-        <h1>Ryan's RPG</h1>
+        <h1>Mijn RPG</h1>
       </header>
       <main>
         <Outlet />
