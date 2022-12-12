@@ -1,8 +1,8 @@
-import Monster from "../Monstres/Monster.js";
+import Monster from "./Monster.js";
 
 class Minotaur extends Monster {
 
-    constructor (name) {
+    constructor (name='Big Bull') {
         super(name);
         this.leather = this.dice4.roll();
     }

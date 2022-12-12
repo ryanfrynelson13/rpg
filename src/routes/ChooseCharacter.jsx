@@ -55,22 +55,22 @@ const ChooseCharacter = () => {
                   <option value={['goblin',goblin]}>Goblin</option>
                   <option value={['centaur',centaur]}>Centaur</option>
                 </select>
-                <button onClick={confirmHeroType} className="btn btn-outline-dark">Confirm Class</button>
+                <button onClick={confirmHeroType} className="btn btn-outline-light">Confirm Class</button>
               </div>
     }
 
     const selectHeroName = () =>{
       return <div className="d-flex justify-content-center w-100 align-items-center">
                 <form onSubmit={event => submitHeroName(event)}>
-                  <label htmlFor="name" className="form-label">Choose your name:</label>
+                  <label htmlFor="name" className="form-label text-white">Choose your name:</label>
                   <input type="text" className="form-control" name="name" id="name"  />
-                  <button className="btn btn-outline-dark mt-2">Confirm Name</button>
+                  <button className="btn btn-outline-light mt-2">Confirm Name</button>
                 </form>
               </div>
     }
 
   return (
-    <div className="game-init shadow-lg">
+    <div className="game-init shadow-lg bg-dark">
       <div className="d-flex mx-auto px-5">
         <div className="hero-img">
           <img className="img-fluid" src={chosenHeroTypeImg} alt="" />

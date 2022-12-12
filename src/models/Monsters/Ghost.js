@@ -2,7 +2,7 @@ import Monster from "./Monster.js";
 
 class Ghost extends Monster {
 
-    constructor (name) {
+    constructor (name='Casper') {
         super(name)
     }
 

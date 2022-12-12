@@ -9,10 +9,9 @@ import {
 
 import GameInit from "./routes/GameInit";
 import ChooseCharacter from './routes/ChooseCharacter';
-import GameBoard from './routes/GameBoard';
+import GameBoard from './routes/actions/GameBoard';
 import Duel from './routes/actions/Duel';
-import Shop from './routes/actions/Shop'
-import Board from './routes/actions/Board'
+import Shop from './routes/actions/Shop';
 
 const router = createBrowserRouter([
   {
@@ -30,20 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/game-board",
         element: <GameBoard  />,
-        children: [
-          {
-            path: "/game-board/duel",
-            element: <Duel />,
-          },
-          {
-            path: "/game-board/board",
-            element: <Board />,
-          },
-          {
-            path: "/game-board/shop",
-            element: <Shop />,
-          },
-        ]
+      },
+      {
+        path: "/game-board/duel",
+        element: <Duel />,
+      },
+      {
+        path: "/game-board/shop",
+        element: <Shop />,
       },
     ]
   },

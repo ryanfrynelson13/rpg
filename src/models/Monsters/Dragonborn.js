@@ -2,7 +2,7 @@ import Monster from "./Monster.js";
 
 class Dragonborn extends Monster {
 
-    constructor (name) {
+    constructor (name='Drogon') {
         super(name);
         this.leather = this.dice4.roll();
         this.gold = this.dice6.roll();
