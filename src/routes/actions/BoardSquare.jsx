@@ -1,10 +1,10 @@
 import React from 'react'
-import stickFigure from '../../img/heros/266-2668238_share-walking-stick-figure-icon.png'
+import stickFigure from '../../img/heros/12-120469_human-clipart-red-red-stick-figure-walking.png'
 import '../../styles/board.css'
 
 const BoardSquare = ({curr}) => {
   return (
-    <div className={curr? 'board-square curr border border-warning ': 'board-square border border-warning'}>
+    <div className={curr? 'board-square curr': 'board-square'}>
         <img src={curr? stickFigure : ''} alt="" />
     </div>
   )

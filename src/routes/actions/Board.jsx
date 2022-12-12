@@ -18,8 +18,27 @@ const Board = () => {
       setBoardSquares(tempArr)
     }
   }, [])
+
+  const moveHero = (event) => {
+    if(event.key === 'ArrowRight' ){
+      setCurrentSquare(currentSquare +1)
+      setBoardSquares(boardSquares)
+    }
+    if(event.key === 'ArrowLeft' ){
+      setCurrentSquare(currentSquare -1)
+      setBoardSquares(boardSquares)
+    }
+    if(event.key === 'ArrowUp' ){
+      setCurrentSquare(currentSquare -20)
+      setBoardSquares(boardSquares)
+    }
+    if(event.key === 'ArrowDown' ){
+      setCurrentSquare(currentSquare +20)
+      setBoardSquares(boardSquares)
+    }
+  } 
   return (
-    <div ref={divElement} tabIndex={0} onKeyDown={() => {console.log('yo');}}>
+    <div ref={divElement} tabIndex={0} onKeyDown={(event) => {moveHero(event);}}>
         <h2 className='text-center'>Board</h2>
         <div className='board' style={{  
             backgroundImage: `url(${swamp})`,
