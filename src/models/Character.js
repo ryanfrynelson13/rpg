@@ -13,8 +13,8 @@ class Character {
      * @param {string} nom Le nom du personnage
      */
     constructor (name) {
-        this.de4 = new Dice(4);
-        this.de6 = new Dice(6);
+        this.dice4 = new Dice(4);
+        this.dice6 = new Dice(6);
         this.name = name;
         this.#_strength = generateStats();
         this.#_endurance = generateStats();

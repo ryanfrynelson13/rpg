@@ -4,6 +4,8 @@ class Ghost extends Monster {
 
     constructor (name='Casper') {
         super(name)
+        this.class = 'ghost'
+
     }
 
 }
