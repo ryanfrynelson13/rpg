@@ -10,7 +10,9 @@ const Duel = () => {
   },[])
   const {state} = useLocation()
   const {hero, duelMonster} = state
+  // eslint-disable-next-line
   const [monster, setMonster] = useState(duelMonster)
+  // eslint-disable-next-line
   const [currHero, setCurrHero] = useState(hero)
 
   return (

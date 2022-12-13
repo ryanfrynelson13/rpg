@@ -4,7 +4,7 @@ import dwarf from '../../img/heros/636271781394265550.png'
 import human from '../../img/heros/636271801914013762.png'
 import elf from '../../img/heros/636287075350739045.png'
 import goblin from '../../img/heros/638062024584880857.png'
-import centaur from '../../img/heros/dfae8441ec34f97d11fdf959000f1b7c.jpg'
+import centaur from '../../img/heros/638061114013567234.png'
 
 const classMap = new Map([
     ['human', human],
