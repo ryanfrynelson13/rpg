@@ -9,6 +9,10 @@ class Minotaur extends Monster {
         this.leather = this.dice4.roll();
     }
 
+    test () {
+        console.log('Le test fonctionne');
+    }
+
 }
 
 export default Minotaur;

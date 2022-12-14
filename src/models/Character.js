@@ -44,6 +44,8 @@ class Character {
         console.log("Pv "+ target.name +" après attaque : ", target.ph);
     }
 
+  
+
     /**
      * Permet de récupérer les détails du personnage
      * @returns {string} Détails du personnage
