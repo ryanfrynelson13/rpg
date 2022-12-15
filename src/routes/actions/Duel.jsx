@@ -8,9 +8,7 @@ const Duel = () => {
   let temp;
   const {state} = useLocation()
   const {hero, duelMonster} = state
-  // eslint-disable-next-line
   const [monster, setMonster] = useState(duelMonster)
-  // eslint-disable-next-line
   const [currHero, setCurrHero] = useState(hero)
   
   const [diceValue, setDiceValue] = useState(0)
@@ -39,8 +37,13 @@ const Duel = () => {
 
   const attack =  (event) => {
     if(event.target.dataset.key === 'hero'){
-
+      console.log(hero)
+      console.log(monster);
+      hero.hit(duelMonster)
+      setMonster(duelMonster)
     } else {
+      console.log(hero)
+      console.log(monster);
       monster.hit(hero)
       setCurrHero(hero)
     }

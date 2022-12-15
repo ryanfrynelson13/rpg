@@ -41,7 +41,7 @@ class Character {
         // target.pv = target.pv - degats
         target.hp -= damage;
         console.log(`${this.name} a infligé ${damage} points de dégats à ${target.name}`);
-        console.log("Pv "+ target.name +" après attaque : ", target.ph);
+        console.log("Pv "+ target.name +" après attaque : ", target.hp);
     }
 
   
