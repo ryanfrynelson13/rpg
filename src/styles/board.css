@@ -6,13 +6,13 @@ div:active{
 .board{
     display: grid;
     /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-    grid-template-columns: repeat(20, 4rem);
+    grid-template-columns: repeat(20, 4.5rem);
     border-radius: 8px;
 }
 
 .board-square{
-    height: 4rem;
-    width: 4rem;
+    height: 4.5rem;
+    width: 4.5rem;
     overflow: hidden;
 }
 

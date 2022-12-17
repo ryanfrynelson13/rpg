@@ -5,6 +5,7 @@ class Monster extends Character {
     constructor (name) {
         super(name);
         this.initiative = generateStats()
+        this.maxEndurance = this.endurance
     }
     
 

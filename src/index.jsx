@@ -10,6 +10,7 @@ import {
 import GameInit from "./routes/GameInit";
 import ChooseCharacter from './routes/ChooseCharacter';
 import GameBoard from './routes/actions/GameBoard';
+import DuelStart from './routes/actions/DuelStart';
 import Duel from './routes/actions/Duel';
 import Shop from './routes/actions/Shop';
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/game-board/duel",
         element: <Duel />,
+      },
+      {
+        path: "/game-board/duel-start",
+        element: <DuelStart />,
       },
       {
         path: "/game-board/shop",

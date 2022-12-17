@@ -10,6 +10,8 @@ class Hero extends Character {
         super(name);
         this.gold = 0;
         this.leather = 0;
+        this.hp = this.hp + 10
+        this.maxHP = this.hp
     }
 
     /**

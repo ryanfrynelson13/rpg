@@ -5,16 +5,11 @@ class Human extends Hero {
     constructor (name) {
         super(name);
         this.class = 'human'
-       
-    }
-
-    get strength () {
-        return super.strength +1
-    }
-
-    get endurance () {
-        return super.endurance +1
-    }
+        this.mana = 1
+        this.endurance = this.endurance +2
+        this.maxEndurance = this.endurance
+        this.maxMana = this.mana
+    }   
 
     
 

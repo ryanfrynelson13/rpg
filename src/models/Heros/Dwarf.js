@@ -5,11 +5,13 @@ class Dwarf extends Hero {
     constructor (name) {
         super(name);
         this.class = 'dwarf'
+        this.armor++
+        this.strength++
+        this.endurance += 2
+        this.speed -= 2
+        this.maxEndurance = this.endurance
     }
 
-    get endurance () {
-        return super.endurance +1
-    }
 
 }
 

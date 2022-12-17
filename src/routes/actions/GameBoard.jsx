@@ -75,7 +75,7 @@ const GameBoard = () => {
     if(random > 40 && random <= 55) {
       random = Math.floor(Math.random()*5)
       const duelMonster = new monstersArr[random]()
-      navigate('/game-board/duel', {state: {hero,duelMonster}})
+      navigate('/game-board/duel-start', {state: {hero,duelMonster}})
     }
  
   }
