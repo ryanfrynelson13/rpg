@@ -10,9 +10,8 @@ const HeroTurn = () => {
     const navigate = useNavigate()
 
     const {hero, monster, updateCharacters} = useOutletContext()    
-    // const [damage, setDamage] = useState(0)  
+    const [damage, setDamage] = useState(0)  
     const [isChoosingAttack, setIsChoosingAttack] = useState(false)
-    const [isHeroTurn, setIsHeroTurn] = useState(true)
     const [isRollingDice, setIsRollingDice] = useState(false)
     const [typeOfAttack, setTypeOfAttack] = useState('')
     const [diceValue, setDiceValue] = useState(0) 
@@ -41,17 +40,21 @@ const HeroTurn = () => {
       
     
       const attack =  () => {    
+        let attackDamage;
         switch (typeOfAttack) {
             case 'strength':
-                hero.strongAttack(monster, diceValue)
+                attackDamage = hero.strongAttack(monster, diceValue)
+                setDamage(attackDamage)
                 updateCharacters(hero, monster)
                 break;
             case 'speed':
-                hero.speedAttack(monster, diceValue)
+                attackDamage = hero.speedAttack(monster, diceValue)
+                setDamage(attackDamage)
                 updateCharacters(hero, monster)
                 break;
             case 'magic':
-                hero.magicAttack(monster, diceValue)
+                attackDamage = hero.magicAttack(monster, diceValue)
+                setDamage(attackDamage)
                 updateCharacters(hero, monster)
                 break;
             default:
@@ -70,7 +73,7 @@ const HeroTurn = () => {
         <div className='duel-board bg-dark d-flex align-items-center justify-content-center'>
                         
                 {
-                    isHeroTurn && !isChoosingAttack && !isRollingDice ?
+                    !isChoosingAttack && !isRollingDice ?
                     <div className='d-flex flex-column justify-content-around align-items-center' style={{height: '40%'}}>
                         <button onClick={chooseToAttack} className="btn btn-outline-light">Choose to attack</button>
                         <button className="btn btn-outline-light">Drink a potion</button>
@@ -85,7 +88,13 @@ const HeroTurn = () => {
                     isRollingDice ? 
                     <div className='d-flex flex-column justify-content-center align-items-center w-100' style={{height: '40%'}}>
                          <RollDice changeDiceValue={changeDiceValue}/>
-                         {diceValue ?  <p className='text-white'>Roll: {diceValue}</p>:''}
+                         {diceValue ? 
+                            <div>
+                                <p className='text-white'>Roll: {diceValue}</p>
+                                <p className='text-white'>{monster.name} loses {damage} HP</p>
+                                <button onClick={startMonsterTurn} className='btn btn-outline-light'>End your turn</button>
+                            </div> :''
+                        }
                     </div> : ''
                 }            
             

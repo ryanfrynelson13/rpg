@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { useLocation, Outlet} from 'react-router-dom'
 import Card from '../includes/Card'
 import '../../styles/duel.css'
@@ -10,7 +10,6 @@ const DuelBoard = () => {
   
 //   const navigate = useNavigate()
   const {state} = useLocation()
-  console.log(useLocation());
   const {hero, duelMonster} = state
 
   const [currHero, setCurrHero] = useState(hero)

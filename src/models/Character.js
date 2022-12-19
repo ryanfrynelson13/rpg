@@ -34,7 +34,6 @@ class Character {
         if(rollToHit >= target.armor) {
             console.log("Pv "+ target.name +" avant attaque : ", target.hp);
             damage = this.dice4.roll() + modifier(this.force);
-            // target.pv = target.pv - degats
             target.hp -= damage;
             if(target.hp < 0 ) target.hp = 0
             console.log(`${this.name} a infligé ${damage} points de dégats à ${target.name}`);
@@ -50,11 +49,11 @@ class Character {
         if (target === this || !(target instanceof Character) || target.hp <= 0) return;
 
         const rollToHit = roll + modifier(this.speed)
+        let damage = 0
 
         if(rollToHit >= target.speed) {
             console.log("Pv "+ target.name +" avant attaque : ", target.hp);
             let damage = this.dice4.roll();
-            // target.pv = target.pv - degats
             target.hp -= damage;
             if(target.hp < 0 ) target.hp = 0
             console.log(`${this.name} a infligé ${damage} points de dégats à ${target.name}`);
@@ -62,18 +61,18 @@ class Character {
             this.endurance -= 2
         } 
         
-        return rollToHit
+        return damage
     }
 
     magicAttack (target, roll) {
         if (target === this || !(target instanceof Character) || target.hp <= 0) return;
 
         const rollToHit = roll + modifier(this.strength)
+        let damage = 0
 
         if(rollToHit >= target.armor) {
             console.log("Pv "+ target.name +" avant attaque : ", target.hp);
             let damage = this.dice4.roll() + this.dice4.roll();
-            // target.pv = target.pv - degats
             target.hp -= damage;
             if(target.hp < 0 ) target.hp = 0
             console.log(`${this.name} a infligé ${damage} points de dégats à ${target.name}`);
@@ -81,7 +80,7 @@ class Character {
             this.mana--            
         }
 
-        return rollToHit
+        return damage
 
 
     }

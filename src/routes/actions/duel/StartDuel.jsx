@@ -42,7 +42,8 @@ const StartDuel = () => {
           </div>
           <div className='d-flex flex-column justify-content-center align-items-center'>
             {diceValue === 0 ? '': <p className='text-white'>Roll: {diceValue}</p>}        
-              {diceValue > 0 && hero.getInitiative(diceValue) >= monster.initiative ? <div className='d-flex flex-column'><p className='text-white'>You manage to dodge a monsters attack</p><button data-key={'hero'} onClick={startHeroTurn} className='btn btn-outline-light'>Choose your next move</button></div> : diceValue > 0 ? <div className='d-flex flex-column'><p className='text-white'>You try to block but fail to dodge the monsters attack</p><p className='text-white text-center'>You lose {damage} HP</p><button data-key={'monster'} onClick={startHeroTurn} className='btn btn-outline-light'>Choose your next move</button></div> : ''}
+            {diceValue > 0 && hero.getInitiative(diceValue) >= monster.initiative ? <div className='d-flex flex-column'><p className='text-white'>You manage to dodge a monsters attack</p></div> : diceValue > 0 ? <div className='d-flex flex-column'><p className='text-white'>You try to block but fail to dodge the monsters attack</p><p className='text-white text-center'>You lose {damage} HP</p></div> : ''}
+            {diceValue === 0 ? '': <button onClick={startHeroTurn} className='btn btn-outline-light'>Choose your next move</button>}
           </div>
         </div>
     )
