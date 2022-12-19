@@ -41,6 +41,8 @@ class Character {
             this.endurance -= 4
         }
 
+        if(damage === 0) this.endurance -= 2
+
         return damage
 
     }
@@ -60,6 +62,8 @@ class Character {
             console.log("Pv "+ target.name +" après attaque : ", target.hp);
             this.endurance -= 2
         } 
+
+        if(damage === 0) this.endurance -= 2
         
         return damage
     }
@@ -79,6 +83,8 @@ class Character {
             console.log("Pv "+ target.name +" après attaque : ", target.hp);
             this.mana--            
         }
+
+        if(damage === 0) this.endurance -= 2
 
         return damage
 

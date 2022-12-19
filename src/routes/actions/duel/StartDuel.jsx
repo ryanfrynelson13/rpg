@@ -17,11 +17,10 @@ const StartDuel = () => {
       if(diceValue !== 0)  {
         if(hero.getInitiative(diceValue) < monster.initiative){   
           const damage =  monster.strongAttack(hero, diceValue)
-          setDamage(damage)         
-          if(damage === 0 )  monster.endurance -= 2
-        }  else {
+          setDamage(damage) 
+        }  else{
           monster.endurance -= 2
-        }    
+        }        
         updateCharacters(hero, monster)        
       }
     // eslint-disable-next-line
