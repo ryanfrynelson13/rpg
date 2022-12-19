@@ -29,7 +29,7 @@ class Character {
         if (target === this || !(target instanceof Character) || target.hp <= 0) return;
 
         const rollToHit = roll + modifier(this.strength)
-        let damage
+        let damage = 0
 
         if(rollToHit >= target.armor) {
             console.log("Pv "+ target.name +" avant attaque : ", target.hp);

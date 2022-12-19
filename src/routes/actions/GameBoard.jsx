@@ -4,7 +4,7 @@ import Card from '../includes/Card'
 
 import '../../styles/game-board.css'
 
-import BoardSquare from './BoardSquare'
+import BoardSquare from '../includes/BoardSquare'
 import '../../styles/board.css'
 import swamp from '../../img/heros/pq61m18mmzp51.webp'
 
@@ -75,7 +75,7 @@ const GameBoard = () => {
     if(random > 40 && random <= 55) {
       random = Math.floor(Math.random()*5)
       const duelMonster = new monstersArr[random]()
-      navigate('/game-board/duel-start', {state: {hero,duelMonster}})
+      navigate('/game-board/duel/start', {state: {hero,duelMonster}})
     }
  
   }
