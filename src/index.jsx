@@ -13,6 +13,7 @@ import GameBoard from './routes/actions/GameBoard';
 import DuelBoard from './routes/actions/DuelBoard';
 import StartDuel from './routes/actions/duel/StartDuel';
 import HeroTurn from './routes/actions/duel/HeroTurn';
+import MonsterTurn from './routes/actions/duel/MonsterTurn';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           {
             path: "hero-turn",
             element: <HeroTurn />,
+          },
+          {
+            path: "monster-turn",
+            element: <MonsterTurn />,
           },
         ]
       },     

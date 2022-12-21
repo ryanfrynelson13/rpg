@@ -16,7 +16,6 @@ const DuelBoard = () => {
   const [monster, setMonster] = useState(duelMonster)
 
   const updateCharacters = (hero, monster) => {   
-    console.log('hi');
       const tempHero = _.cloneDeep(hero)
       const tempMonster = _.cloneDeep(monster)
       setCurrHero(tempHero)
