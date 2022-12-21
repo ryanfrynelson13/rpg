@@ -29,12 +29,7 @@ const Card = ({character}) => {
   const endurancePercentage = (character.endurance / character.maxEndurance *100).toFixed(0)  
   const manaPercentage = character.mana ?  (character.mana / character.maxMana *100).toFixed(0) : 0
   
-  // const [hpPercentage, setHPPercentage] = useState('')
-
-  // useEffect(() => {
-  //   console.log('in');
-  //   setHPPercentage(character.hp / character.maxHP *100)
-  // }, [character])
+ 
   return (   
     <div className='card m-4 border border-dark bg-dark text-white d-flex flex-column justify-content-end' style={{width: "20rem"}}>
         <img src={classMap.get(character.class)} className='card-img-top border border-dark' alt="" />
